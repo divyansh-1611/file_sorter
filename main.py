@@ -1,6 +1,6 @@
 import os, shutil
 
-path = "C:/Users/Dell/Downloads/"
+path = "your_path_here"
 
 file_names = os.listdir(path)
 
