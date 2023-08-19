@@ -1,14 +1,21 @@
-import os, shutil
+import os
+import shutil
 
-path = "your_path_here"
+path = "C:/Users/Dell/Downloads/"
 
-file_names = os.listdir(path)
+#file_names = os.listdir(path)
 
 folder_names=["image files","text files","archives","setups","word files","pdf files","other documents","miscellaneous"]
 
+file_names = set(os.listdir(path)) - set(folder_names)
+
 for i in range(len(folder_names)):
     if not os.path.exists(path+folder_names[i]):
+        if file in folder_names:
+            continue
         os.mkdir(path+folder_names[i])
+    else:
+        break
 
 for file in file_names:
     if ".txt" in file and not os.path.exists(path + "text files/" + file):
